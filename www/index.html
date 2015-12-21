@@ -1,0 +1,354 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <script src="components/loader.js"></script>
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script src="js/app.js"></script>
+  <script src="js/localStorage.js"></script>
+  <script src="js/knockout-3.3.0.js"></script>
+  <script>
+    ons.bootstrap();
+
+$(function() {
+        ko.applyBindings(new viewModel('山田'));
+    });
+  </script>
+  <style>
+    .item {
+      padding: 10px;
+      line-height: 1;
+    }
+    .item-thum {
+      background-color: #ccc;
+      width: 50px;
+      height: 50px;
+      border-radius: 4px;
+    }
+    .item-title {
+      font-size: 15px;
+      font-weight: 500;
+    }
+    .item-desc {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.3;
+      margin: 4px 0 0 0;
+      padding: 0 30px 0 0;
+    }
+    .item-label {
+      font-size: 12px;
+      color: #999;
+      float: right;
+    }
+
+.point-item {
+    padding: 10px;
+	line-height: 1;
+}
+
+.point-time > span {
+    font-size: 20px;
+    margin: 0 0 0 0;
+    padding: 5px 15px 5px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.point-title {
+	margin: 0 10px 0 10px;
+    font-size: 20px;
+}
+
+/* OnsenUI CSSコンポーネント Button Bar */
+.button-bar {
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 17px;
+  display: table;
+  table-layout: fixed;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  margin: 0;
+  border: none;
+}
+.button-bar__item {
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 17px;
+  display: table-cell;
+  width: auto;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  position: relative;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+.button-bar__item > input {
+  position: absolute;
+  overflow: hidden;
+  right: 0px;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  padding: 0;
+  border: 0;
+  opacity: 0.001;
+  z-index: 1;
+  vertical-align: top;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.button-bar__item:first-child > .button-bar__button {
+  border-left: 1px solid rgba(18,114,224,0.77);
+  border-right: 1px solid rgba(18,114,224,0.77);
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.button-bar__item:last-child > .button-bar__button {
+  border-right: 1px solid rgba(18,114,224,0.77);
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.button-bar__button {
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 17px;
+  -webkit-border-radius: inherit;
+  border-radius: inherit;
+  background-color: transparent;
+  color: rgba(18,114,224,0.77);
+  border: 0px solid rgba(18,114,224,0.77);
+  border-top: 1px solid rgba(18,114,224,0.77);
+  border-bottom: 1px solid rgba(18,114,224,0.77);
+  border-right: 1px solid rgba(18,114,224,0.77);
+  font-weight: 400;
+  padding: 0 8px;
+  height: 27px;
+  line-height: 27px;
+  font-size: 13px;
+  width: 100%;
+  -webkit-transition: background-color 0.2s linear, color 0.2s linear;
+  -moz-transition: background-color 0.2s linear, color 0.2s linear;
+  -o-transition: background-color 0.2s linear, color 0.2s linear;
+  transition: background-color 0.2s linear, color 0.2s linear;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.button-bar__button:active,
+:active + .button-bar__button {
+  background-color: rgba(18, 114, 224, 0.2);
+  border: 0px solid rgba(18,114,224,0.77);
+  border-top: 1px solid rgba(18,114,224,0.77);
+  border-bottom: 1px solid rgba(18,114,224,0.77);
+  border-right: 1px solid rgba(18,114,224,0.77);
+  height: 27px;
+  line-height: 27px;
+  font-size: 13px;
+  width: 100%;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+.button-bar__item.active > .button-bar__button,
+:checked + .button-bar__button {
+  background-color: rgba(18,114,224,0.77);
+  color: #fff;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+.button-bar__button:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+.button-bar__button:hover {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+.button-bar__button:focus {
+  outline: 0;
+}
+/* OnsenUI CSSコンポーネント Button Bar ここまで */
+
+/* フッター 参考ページ：http://webkikaku.co.jp/staff/htmlcss/footer-bottom/ */
+body , html {
+    height: 100%;
+}
+ 
+#container {
+    width: 100%;
+    position: relative;
+    height: auto;
+    height: 100%;
+    min-height: 100%;
+}
+ 
+#contents {
+    padding-bottom: 100px;
+}
+ 
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+}
+/* フッター ここまで */
+
+</style>
+</head>
+
+
+<body>
+  <ons-navigator page="list.html" var="app.navi"></ons-navigator>
+
+  <ons-template id="list.html">
+    <ons-page id="list-page">
+
+
+<div id="container">
+<div id="header"></div>
+<div id="contents">
+
+      <ons-list data-bind="foreach: RoutePointList">
+
+        <ons-list-item modifier="" class="" onclick="showDialog(this)">
+          <ons-row>
+            <ons-col width="25%"> 
+                <div class="point-time"><span data-bind="text: $data.ArriveTime">06:59</span></div>
+            </ons-col>
+            <ons-col>
+                <div class="point-title" data-bind="text: $data.Name">間山</div>
+            </ons-col>
+            <ons-col width="25%">
+                <div class="point-time"><span data-bind="text: $data.DepartureTime">07:03</span></div>
+            </ons-col>
+          </ons-row>            
+        </ons-list-item>
+
+      </ons-list>
+
+</div>
+<div id="footer">
+
+<div class="button-bar" style="width:280px; margin:0 auto;">
+  <div class="button-bar__item">
+    <button class="button-bar__button">
+    <ons-icon icon="fa-sign-in" size="15px" style="color: rgba(18,114,224,0.77); margin-right: 5px;"></ons-icon>Arrival</button>
+  </div>
+  <div class="button-bar__item">
+    <button class="button-bar__button" data-bind="click: showDialogB">
+    <i class="fa fa-map-signs" style="margin-right: 5px;"></i>
+    Mark</button>
+  </div>
+  <div class="button-bar__item">
+    <button class="button-bar__button">
+    <ons-icon icon="fa-sign-out" size="15px" style="color: rgba(18,114,224,0.77);  margin-right: 5px;"></ons-icon>Departure</button>
+  </div>
+</div>
+
+</div>
+</div>
+
+
+        </div>
+
+</ons-page>
+  </ons-template>
+
+<!-- 地点編集ダイアログ --->
+<ons-template id="dialogcontent.html">
+  <ons-dialog cancelable>
+    <input type="text" name="example1">
+  </ons-dialog>
+</ons-template>
+
+
+  <ons-template id="detail.html">
+    <ons-page id="detail-page">
+
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">Details</div>
+      </ons-toolbar>
+
+      <ons-list modifier="inset" style="margin-top: 10px">
+        <ons-list-item class="item">
+          <ons-row>
+            <ons-col width="60px"> 
+              <div class="item-thum"></div>
+            </ons-col>
+            <ons-col>
+              <header>
+                <span class="item-title">Title</span>
+                <span class="item-label">Foobar</span>
+              </header>
+              <p class="item-desc">desc</p>
+            </ons-col>
+          </ons-row>
+        </ons-list-item>
+
+        <ons-list-item modifier="chevron" id="add-note-action" class="add-note-action-item">
+          <ons-icon icon="ion-chatboxes" fixed-width="true" style="color: #ccc"></ons-icon>
+          Add a note
+        </ons-list-item>
+      </ons-list>
+
+      <ons-list style="margin-top: 10px">
+        <ons-list-item class="item">
+          <header>
+            <span class="item-title">Lorem ipsum dolor sit amet</span>
+          </header>
+          <p class="item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </ons-list-item>
+        <ons-list-item class="item">
+          <header>
+            <span class="item-title">Lorem ipsum dolor sit amet</span>
+          </header>
+          <p class="item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </ons-list-item>
+        <ons-list-item class="item">
+          <header>
+            <span class="item-title">Lorem ipsum dolor sit amet</span>
+          </header>
+          <p class="item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </ons-list-item>
+      </ons-list>
+
+      <br>
+
+    </ons-page>
+  </ons-template>
+
+</body>
+
+</html>
